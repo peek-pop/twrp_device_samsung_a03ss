@@ -1,0 +1,41 @@
+# mount point    	fs          type		device			device2				flags
+
+# Physical partitions
+
+/cache          ext4        /dev/block/by-name/cache        flags=backup=0;display="Cache"
+/data           f2fs        /dev/block/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
+/efs            ext4        /dev/block/by-name/sec_efs      flags=backup=1;display="Efs"
+/metadata   	ext4		/dev/block/by-name/md_udc       flags=backup=1;;wipeingui;removable;display="Metadata"
+/misc       	emmc		/dev/block/by-name/misc         flags=backup=0;display="Misc"
+/nvram          emmc        /dev/block/by-name/nvram        flags=backup=1;display="Nvram"
+/odm        	ext4		/dev/block/mapper/odm           flags=backup=1;;wipeingui;removable;display="Odm"
+/omr            ext4        /dev/block/by-name/omr          flags=backup=1;display="Omr"
+/optics         ext4		/dev/block/by-name/optics   	flags=backup=1;display="Optics"
+/prism          ext4		/dev/block/by-name/prism     	flags=backup=1;display="Prism"
+/persist       	ext4    	/dev/block/by-name/persist      flags=backup=1;display="Persist"
+/product    	ext4		/dev/block/mapper/product       flags=backup=1;;wipeingui;removable;display="Product"
+/spmfw          emmc        /dev/block/by-name/spmfw        flags=backup=1;display="Spmfw"
+/scp1           emmc        /dev/block/by-name/scp1         flags=backup=1;display="Scp1"
+/sspm_1         emmc        /dev/block/by-name/sspm_1       flags=backup=1;display="Sspm_1"
+/system         ext4		/dev/block/mapper/system        flags=backup=1;;wipeingui;removable;display="System"
+/vendor     	ext4		/dev/block/mapper/vendor        flags=backup=1;;wipeingui;removable;display="Vendor"
+
+# Image
+
+/boot        	emmc    	/dev/block/by-name/boot     	flags=backup=1;flashimg
+/recovery       emmc    	/dev/block/by-name/recovery     flags=backup=1;flashimg
+/dtbo_image 	emmc		/dev/block/by-name/dtbo     	flags=backup=1;flashimg;display="Dtbo Image"
+/efuse_image 	emmc		/dev/block/by-name/efuse     	flags=backup=1;flashimg;display="Efuse Image"
+/md1img_image	emmc		/dev/block/by-name/md1img       flags=backup=1;flashimg;display="MD1img Image"
+/omr_image      emmc        /dev/block/by-name/omr      	flags=backup=1;flashimg;display="Omr Image"
+/optics_image	emmc		/dev/block/by-name/optics       flags=backup=1;flashimg;display="Optics Image"
+/prism_image	emmc		/dev/block/by-name/prism        flags=backup=1;flashimg;display="Prism Image"
+/odm_image  	emmc		/dev/block/mapper/odm           flags=backup=1;flashimg;display="Odm Image"
+/product_image	emmc		/dev/block/mapper/product       flags=backup=1;flashimg;display="Product Image"
+/system_image	emmc		/dev/block/mapper/system        flags=backup=1;flashimg;display="System Image"
+/vendor_image	emmc		/dev/block/mapper/vendor        flags=backup=1;flashimg;display="Vendor Image"
+/vbmeta_image	emmc		/dev/block/by-name/vbmeta       flags=backup=1;flashimg;display="Vbmeta Image"
+
+# Removable storage
+/external_sd	vfat	/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=storage;wipeingui;removable;display="MicroSD"
+/usb-otg    	vfat	/dev/block/sda1 		/dev/block/sda			flags=storage;wipeingui;removable;display="USB-OTG"
